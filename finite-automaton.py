@@ -1,5 +1,3 @@
-import logging
-
 class FiniteAutomaton:
     def __init__(self):
         self.states = set()
