@@ -1,4 +1,4 @@
-# Implementaçãod de Tabelas de Hash (HashSet)
+# Implementação de Tabelas de Hash (HashSet)
 
 Este é um exemplo de implementação de um conjunto em Kotlin usando tabelas de hash (HashMap).
 
