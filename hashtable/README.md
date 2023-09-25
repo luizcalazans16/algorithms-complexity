@@ -4,17 +4,17 @@ Este é um exemplo de implementação de um conjunto em Kotlin usando tabelas de
 
 ### Funções do Conjunto
 
-- `add(element: T)`: Adiciona um elemento ao conjunto. Se o elemento já estiver no conjunto, ele não será duplicado.
+- `add(element: T)`: Adiciona um elemento ao conjunto. Se o elemento já estiver no conjunto, ele não será duplicado. Complexidade de O(1).
 
-- `remove(element: T)`: Remove um elemento do conjunto, se ele estiver presente.
+- `remove(element: T)`: Remove um elemento do conjunto, se ele estiver presente. Complexidade de O(1).
 
-- `contains(element: T)`: Verifica se um elemento está presente no conjunto e retorna verdadeiro (true) se estiver, ou falso (false) caso contrário.
+- `contains(element: T)`: Verifica se um elemento está presente no conjunto e retorna verdadeiro (true) se estiver, ou falso (false) caso contrário. Complexidade de O(1).
 
-- `union(otherSet: HashSet<T>): HashSet<T>`: Retorna um novo conjunto que é a união do conjunto atual com outro conjunto (`otherSet`).
+- `union(otherSet: HashSet<T>): HashSet<T>`: Retorna um novo conjunto que é a união do conjunto atual com outro conjunto (`otherSet`). Complexidade de O(m + n) na qual m se dá pelo número de elementos presente em um dos conjuntos e n é o número de elementos de outro dos conjuntos.
 
-- `intersection(otherSet: HashSet<T>): HashSet<T>`: Retorna um novo conjunto que é a interseção do conjunto atual com outro conjunto (`otherSet`).
+- `intersection(otherSet: HashSet<T>): HashSet<T>`: Retorna um novo conjunto que é a interseção do conjunto atual com outro conjunto (`otherSet`). Complexidade de O(n).
 
-- `difference(otherSet: HashSet<T>): HashSet<T>`: Retorna um novo conjunto que é a diferença entre o conjunto atual e outro conjunto (`otherSet`).
+- `difference(otherSet: HashSet<T>): HashSet<T>`: Retorna um novo conjunto que é a diferença entre o conjunto atual e outro conjunto (`otherSet`). Complexidade de O(n).
 
 ### Justificativa
 
