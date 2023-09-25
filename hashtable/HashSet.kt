@@ -10,13 +10,17 @@ class HashSet<T> {
     }
 
     fun contains(element: T): Boolean {
-        return hashMap.containsKey(element)
+        return hashMap[element] != null
     }
 
     fun union(otherSet: HashSet<T>): HashSet<T> {
         val resultSet = HashSet<T>()
-        resultSet.hashMap.putAll(this.hashMap)
-        resultSet.hashMap.putAll(otherSet.hashMap)
+        for (key in this.hashMap.keys) {
+            resultSet.add(key)
+        }
+        for (key in otherSet.hashMap.keys) {
+            resultSet.add(key)
+        }
         return resultSet
     }
 
@@ -40,6 +44,11 @@ class HashSet<T> {
         return resultSet
     }
 
-    fun items() =
-        hashMap.keys.toSet()
+    fun items(): Set<T> {
+        val itemSet = mutableSetOf<T>()
+        for (key in hashMap.keys) {
+            itemSet.add(key)
+        }
+        return itemSet
+    }
 }
