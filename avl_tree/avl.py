@@ -57,7 +57,7 @@ class AVLTree:
         else:
             root.right = self.insert(root.right, key)
 
-        self.update
+        self.update_height
 
     def search(self, root, key):
         if root is None or root.key == key:
@@ -90,7 +90,6 @@ class AVLTree:
 
         balance = self.balance_factor(root)
 
-        # Balancear a árvore após a exclusão
         if balance > 1:
             if key < root.left.key:
                 return self.rotate_right(root)
@@ -116,3 +115,41 @@ class AVLTree:
 
     def delete_key(self, key):
         self.root = self.delete(self.root, key)
+
+    def display(self, node, level=0, prefix="Root: "):
+        if node is not None:
+            print(" " * (level * 4) + prefix + str(node.key))
+            if node.left is not None or node.right is not None:
+                self.display(node.left, level + 1, "L-- ")
+                self.display(node.right, level + 1, "R-- ")
+
+def main():
+    avl_tree = AVLTree()
+
+    avl_tree.root = avl_tree.insert(avl_tree.root, 10)
+    avl_tree.root = avl_tree.insert(avl_tree.root, 20)
+    avl_tree.root = avl_tree.insert(avl_tree.root, 30)
+    avl_tree.root = avl_tree.insert(avl_tree.root, 40)
+    avl_tree.root = avl_tree.insert(avl_tree.root, 50)
+    avl_tree.root = avl_tree.insert(avl_tree.root, 25)
+
+    print("Initial AVL Tree:")
+    avl_tree.display(avl_tree.root)
+
+    key_to_search = 30
+    search_result = avl_tree.search_key(key_to_search)
+
+    if search_result:
+        print(f"Node with key {key_to_search} found in the tree.")
+    else:
+        print(f"Node with key {key_to_search} not found in the tree.")
+
+    key_to_delete = 30
+    avl_tree.root = avl_tree.delete_key(key_to_delete)
+    print(f"Deleted node with key {key_to_delete}.")
+
+    print("\nAVL Tree after deletion:")
+    avl_tree.display(avl_tree.root)
+
+if __name__ == "__main__":
+    main()
