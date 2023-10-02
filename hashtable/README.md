@@ -28,4 +28,10 @@ A escolha de usar tabelas de hash para implementar este conjunto foi feita por v
 
 4. **Flexibilidade**: As tabelas de hash são flexíveis e podem ser usadas para implementar conjuntos de qualquer tipo de elemento.
 
-No entanto, é importante lembrar que, em casos extremos, as colisões podem afetar o desempenho, mas a implementação padrão do Python lida bem com colisões usando encadeamento. Esta implementação é adequada para conjuntos de tamanho moderado a grande, onde a eficiência na manipulação e recuperação de elementos é crucial.
+5. **Escalabilidade**: Em cenários onde você tem um grande número de elementos, o uso de uma tabela de hash pode resultar em um desempenho melhor em comparação com estruturas de dados que têm desempenho mais dependente do tamanho do conjunto.
+
+No entanto, é importante lembrar que, em casos extremos, as colisões podem afetar o desempenho, mas a implementação padrão do Python lida bem com colisões usando encadeamento. Esta implementação é adequada para conjuntos de tamanho moderado a grande, onde a eficiência na manipulação e recuperação de elementos é crucial. 
+
+### Conclusão
+
+Em resumo, o uso de tabelas de hash para implementar conjuntos oferece eficiência em termos de tempo para operações comuns, mas a eficiência depende da qualidade da função de hash e a estrutura pode consumir mais memória em comparação com algumas alternativas. Além disso, é importante lidar adequadamente com colisões para garantir o bom funcionamento da estrutura.
