@@ -5,11 +5,11 @@ class Node:
         self.x = x
         self.y = y
         self.cost = cost
-        self.heuristic = estimated_cost
+        self.estimated_cost = estimated_cost
         self.parent = None
 
     def __lt__(self, other):
-        return (self.cost + self.heuristic) < (other.cost + other.heuristic)
+        return (self.cost + self.estimated_cost) < (other.cost + other.estimated_cost)
 
 def read_map(file_path):
     with open(file_path, 'r') as file:
